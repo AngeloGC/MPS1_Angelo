@@ -1,5 +1,10 @@
 package org.angelo.factorial;
 
+/**
+ * Class providing a method that computes the factorial of an integer number
+ *
+ * @author Angelo Gorgone Carvajal
+ */
 public class Factorial {
     public int compute(int value) {
         if (value < 0) {
