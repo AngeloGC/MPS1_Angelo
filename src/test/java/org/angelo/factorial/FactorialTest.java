@@ -1,5 +1,6 @@
 package org.angelo.factorial;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,9 +16,15 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 class FactorialTest {
+    private Factorial factorial;
+
+    @BeforeEach
+    public void setup() {
+        factorial = new Factorial();
+    }
+
     @Test
     public void shouldComputeReturnOneIfTheNumberIsZero() {
-        var factorial = new Factorial();
         int expectedValue = 1;
         int obtainedValue = factorial.compute(0);
 
@@ -26,7 +33,6 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturnOneIfTheNumberIsOne() {
-        var factorial = new Factorial();
         int expectedValue = 1;
         int obtainedValue = factorial.compute(1);
 
@@ -35,7 +41,6 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturnTwoIfTheNumberIsTwo() {
-        var factorial = new Factorial();
         int expectedValue = 2;
         int obtainedValue = factorial.compute(2);
 
@@ -44,7 +49,6 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturnSixIfTheNumberIsThree() {
-        var factorial = new Factorial();
         int expectedValue = 6;
         int obtainedValue = factorial.compute(3);
 
@@ -53,7 +57,6 @@ class FactorialTest {
 
     @Test
     public void shouldComputeReturn720IfTheNumberIsSix() {
-        var factorial = new Factorial();
         int expectedValue = 720;
         int obtainedValue = factorial.compute(6);
 
@@ -62,7 +65,6 @@ class FactorialTest {
 
     @Test
     public void shouldComputeOfANegativeNumberRaiseAnException() {
-        var factorial = new Factorial();
         assertThrows(RuntimeException.class, () -> factorial.compute(-1));
     }
 }
